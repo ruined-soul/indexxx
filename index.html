@@ -1,136 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MangaStuffs</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Styling */
+<html>
+ <head>
+  <title>
+   MangaStuffs
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            display: flex;
-            flex-direction: column;
+            background: linear-gradient(to right, #000000, #b8860b);
+            color: white;
+            font-family: 'Arial', sans-serif;
         }
-
-        /* Header Styling */
-        header {
-            background-color: #000; /* Black background */
-            color: white; /* White text */
-            padding: 10px 20px; /* Padding for the header */
-            display: flex;
-            justify-content: space-between; /* Space between title and button */
-            align-items: center; /* Center items vertically */
-            position: fixed; /* Fixed position for the header */
-            width: 100%; /* Full width */
-            top: 0; /* Stick to the top */
-            z-index: 1000; /* Above other content */
+        .title {
+            font-family: 'Great Vibes', cursive;
         }
-
-        /* Sidebar Styling */
-        .sidebar {
-            position: fixed;
-            top: 50px; /* Below header */
-            left: -200px; /* Hide off-screen */
-            width: 200px; /* Sidebar width */
-            height: calc(100% - 50px); /* Full height below header */
-            background-color: #333; /* Dark background for sidebar */
-            padding: 20px; /* Padding */
-            transition: left 0.3s; /* Smooth transition */
+        .subtitle {
+            font-family: 'Press Start 2P', cursive;
         }
-
-        .sidebar a {
-            color: white; /* White text */
-            display: block; /* Block links */
-            margin: 10px 0; /* Space between links */
-            text-decoration: none; /* Remove underline */
-        }
-
-        .sidebar a:hover {
-            background-color: #575757; /* Darker background on hover */
-            padding: 10px; /* Padding for hover effect */
-        }
-
-        /* Show sidebar when active */
-        .sidebar.active {
-            left: 0; /* Move into view */
-        }
-
-        /* Content Styling */
-        .content {
-            margin-top: 60px; /* Space for fixed header */
-            padding: 20px; /* Padding for content */
-            flex: 1; /* Allow content to grow */
-            overflow-y: auto; /* Scrollable content */
-        }
-
-        /* Footer Styling */
-        footer {
-            background-color: #f8f8f8; /* Light background */
-            text-align: center; /* Centered text */
-            padding: 10px; /* Padding */
-            position: relative; /* Position for footer */
-            bottom: 0; /* Stick to bottom */
-            width: 100%; /* Full width */
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column; /* Stack header items vertically */
-                align-items: flex-start; /* Align items to the left */
-            }
-            .menu-button {
-                margin-top: 10px; /* Space above button */
-            }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>MangaStuffs</h1>
-    <button class="menu-button" onclick="toggleSidebar()">Menu</button>
-</header>
-
-<div class="sidebar" id="sidebar">
-    <a href="#link1">Link 1</a>
-    <a href="#link2">Link 2</a>
-    <a href="#link3">Link 3</a>
-    <a href="#link4">Link 4</a>
-    <a href="#link5">Link 5</a>
-</div>
-
-<div class="content">
-    <h1>Welcome to MangaStuffs</h1>
-    <p>This is the content area. Here you can add your alphabetical indexing and other texts.</p>
-    <ul>
-        <li>A - Apple</li>
-        <li>B - Banana</li>
-        <li>C - Cherry</li>
-        <li>D - Date</li>
-        <li>E - Elderberry</li>
-        <!-- Add more indexed items as needed -->
-    </ul>
-</div>
-
-<footer>
-    Made by Your Name
-</footer>
-
-<script>
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle('active'); // Toggle active class
-    }
-</script>
-
-</body>
+  </style>
+ </head>
+ <body class="text-center">
+  <div class="py-10">
+   <h1 class="text-6xl title">
+    MangaStuffs
+   </h1>
+   <p class="text-xl subtitle">
+    Manga &amp; Manhua
+   </p>
+   <button class="mt-5 px-6 py-2 bg-black text-white rounded-full">
+    Read Now
+   </button>
+  </div>
+  <div class="py-10">
+   <h2 class="text-3xl font-bold">
+    Manga Index
+   </h2>
+   <div class="grid grid-cols-3 gap-4 mt-5 px-10">
+    <div>
+     <img alt="Bluelock manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/1lnCxDE9tboQLFR0R06Kh296wCRBlB4jrKTzNXULWEnhuq4E.jpg" width="200"/>
+     <p class="mt-2">
+      Bluelock
+     </p>
+    </div>
+    <div>
+     <img alt="One Punch Man manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/HcPRZLgMjZYoK9ecRVLSYRIiv4ZKy8fOx2pZDK6TFdfD0VFnA.jpg" width="200"/>
+     <p class="mt-2">
+      One Punch Man
+     </p>
+    </div>
+    <div>
+     <img alt="One Piece manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/4g79kdfTkhzvF6ErkohSyNICVE1YAuz2RHRLOPmftqD95qiTA.jpg" width="200"/>
+     <p class="mt-2">
+      One Piece
+     </p>
+    </div>
+    <div>
+     <img alt="Berserk manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/XdpnNuNh8Sa4HhkuGtNmyIydTxUr9RqeoJ24bSQG96MCdVxJA.jpg" width="200"/>
+     <p class="mt-2">
+      Berserk
+     </p>
+    </div>
+    <div>
+     <img alt="Sosou no Frieren manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/WTLFVd8oqC4BEBlD7ehdlsFlLMkTIMmKZqIeNh2LF6QJ6qiTA.jpg" width="200"/>
+     <p class="mt-2">
+      Sosou no Frieren
+     </p>
+    </div>
+    <div>
+     <img alt="Jujika no Rokunin manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/qRE3A3TR6Br3MZJkWpVEJ0fX8jbo6vnft4puAjCteufiorKOB.jpg" width="200"/>
+     <p class="mt-2">
+      Jujika no Rokunin
+     </p>
+    </div>
+    <div>
+     <img alt="Jujutsu Kaisen manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/jYRw1Je76QXqaiS32muR17wLGmER9bDtzC1Cex7plYYfzVFnA.jpg" width="200"/>
+     <p class="mt-2">
+      Jujutsu Kaisen
+     </p>
+    </div>
+    <div>
+     <img alt="Dragonball Z manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/dOJLfwd2QtV7bSThtniBT4MVe0UcuoFPrvM9VdVIjPzF6qiTA.jpg" width="200"/>
+     <p class="mt-2">
+      Dragonball Z
+     </p>
+    </div>
+    <div>
+     <img alt="Solo Leveling manga cover" class="w-full" height="200" src="https://storage.googleapis.com/a1aa/image/5MomhfALb0xfSE9wT947pignzzOexLiXNbdTOuHzcF78zVFnA.jpg" width="200"/>
+     <p class="mt-2">
+      Solo Leveling
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="py-10">
+   <h2 class="text-3xl font-bold">
+    About
+    <span class="title">
+     MangaStuffs
+    </span>
+   </h2>
+   <p class="mt-5 px-10">
+    MangaStuffs is a comprehensive manga archive site offering a vast collection of manga in PDF format. Designed for manga enthusiasts, it provides easy access to a wide range of genres, allowing readers to download their favorite titles for offline reading. With an intuitive interface and regular updates, MangaStuffs ensures fans can enjoy high-quality manga content at their convenience.
+   </p>
+   <img alt="MangaStuffs logo" class="mx-auto mt-5" height="300" src="https://storage.googleapis.com/a1aa/image/pmPubtevrMVuBqEjsFeOs0XukE79em6KjZIJcA1WCkdE0VFnA.jpg" width="300"/>
+  </div>
+  <div class="py-10">
+   <h2 class="text-3xl font-bold">
+    Download
+    <span class="title">
+     Hindi Manga
+    </span>
+    PDF
+   </h2>
+  </div>
+  <div class="py-10">
+   <h2 class="text-2xl font-bold">
+    Contact
+   </h2>
+   <p class="mt-2">
+    MangaStuffs (Help Zone)
+   </p>
+  </div>
+  <div class="py-10">
+   <h2 class="text-2xl font-bold">
+    My Socials
+   </h2>
+   <div class="flex justify-center mt-5 space-x-5">
+    <a href="#">
+     <i class="fab fa-facebook-f text-2xl">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fab fa-instagram text-2xl">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fab fa-twitter text-2xl">
+     </i>
+    </a>
+   </div>
+  </div>
+ </body>
 </html>
