@@ -1,128 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alphabetical Index</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden; /* Prevent horizontal scroll */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaStuffs</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Header styling */
-    header {
-      background-color: #f8f8f8;
-      padding: 20px;
-      text-align: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    header img {
-      width: 100px;
-      height: auto;
-    }
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            display: flex;
+            flex-direction: column;
+        }
 
-    .menu-button {
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+        /* Header Styling */
+        header {
+            background-color: #000; /* Black background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for the header */
+            display: flex;
+            justify-content: space-between; /* Space between title and button */
+            align-items: center; /* Center items vertically */
+            position: fixed; /* Fixed position for the header */
+            width: 100%; /* Full width */
+            top: 0; /* Stick to the top */
+            z-index: 1000; /* Above other content */
+        }
 
-    /* Sidebar styling */
-    .sidebar {
-      position: fixed;
-      top: 70px; /* Adjust based on header height */
-      left: -200px; /* Hide sidebar off-screen */
-      width: 200px;
-      height: calc(100% - 70px); /* Full height below the header */
-      background-color: #333;
-      padding: 20px;
-      transition: left 0.3s; /* Smooth transition */
-    }
+        /* Sidebar Styling */
+        .sidebar {
+            position: fixed;
+            top: 50px; /* Below header */
+            left: -200px; /* Hide off-screen */
+            width: 200px; /* Sidebar width */
+            height: calc(100% - 50px); /* Full height below header */
+            background-color: #333; /* Dark background for sidebar */
+            padding: 20px; /* Padding */
+            transition: left 0.3s; /* Smooth transition */
+        }
 
-    .sidebar a {
-      color: white;
-      display: block;
-      margin: 10px 0;
-      text-decoration: none;
-    }
+        .sidebar a {
+            color: white; /* White text */
+            display: block; /* Block links */
+            margin: 10px 0; /* Space between links */
+            text-decoration: none; /* Remove underline */
+        }
 
-    .sidebar a:hover {
-      background-color: #575757;
-      padding: 10px;
-    }
+        .sidebar a:hover {
+            background-color: #575757; /* Darker background on hover */
+            padding: 10px; /* Padding for hover effect */
+        }
 
-    /* Show sidebar when active */
-    .sidebar.active {
-      left: 0; /* Move sidebar into view */
-    }
+        /* Show sidebar when active */
+        .sidebar.active {
+            left: 0; /* Move into view */
+        }
 
-    /* Body content styling */
-    .content {
-      margin-top: 80px; /* Space for header */
-      padding: 20px;
-    }
+        /* Content Styling */
+        .content {
+            margin-top: 60px; /* Space for fixed header */
+            padding: 20px; /* Padding for content */
+            flex: 1; /* Allow content to grow */
+            overflow-y: auto; /* Scrollable content */
+        }
 
-    /* Footer styling */
-    footer {
-      background-color: #f8f8f8;
-      text-align: center;
-      padding: 10px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+        /* Footer Styling */
+        footer {
+            background-color: #f8f8f8; /* Light background */
+            text-align: center; /* Centered text */
+            padding: 10px; /* Padding */
+            position: relative; /* Position for footer */
+            bottom: 0; /* Stick to bottom */
+            width: 100%; /* Full width */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column; /* Stack header items vertically */
+                align-items: flex-start; /* Align items to the left */
+            }
+            .menu-button {
+                margin-top: 10px; /* Space above button */
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <img src="your-logo.png" alt="Logo">
+<header>
+    <h1>MangaStuffs</h1>
     <button class="menu-button" onclick="toggleSidebar()">Menu</button>
-  </header>
+</header>
 
-  <div class="sidebar" id="sidebar">
+<div class="sidebar" id="sidebar">
     <a href="#link1">Link 1</a>
     <a href="#link2">Link 2</a>
     <a href="#link3">Link 3</a>
     <a href="#link4">Link 4</a>
     <a href="#link5">Link 5</a>
-  </div>
+</div>
 
-  <div class="content">
-    <h1>Alphabetical Index</h1>
-    <p>Here you can include your indexed content.</p>
+<div class="content">
+    <h1>Welcome to MangaStuffs</h1>
+    <p>This is the content area. Here you can add your alphabetical indexing and other texts.</p>
     <ul>
-      <li>A - Apple</li>
-      <li>B - Banana</li>
-      <li>C - Cherry</li>
-      <li>D - Date</li>
-      <li>E - Elderberry</li>
-      <!-- Add more indexed items as needed -->
+        <li>A - Apple</li>
+        <li>B - Banana</li>
+        <li>C - Cherry</li>
+        <li>D - Date</li>
+        <li>E - Elderberry</li>
+        <!-- Add more indexed items as needed -->
     </ul>
-  </div>
+</div>
 
-  <footer>
+<footer>
     Made by Your Name
-  </footer>
+</footer>
 
-  <script>
+<script>
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('active');
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active'); // Toggle active class
     }
-  </script>
+</script>
+
 </body>
 </html>
