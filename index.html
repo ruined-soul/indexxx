@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Indexing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            max-width: 50px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline;
+            margin-left: 20px;
+        }
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        /* Content */
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+        }
+        /* Grid layout */
+        @media (min-width: 1024px) {
+            .content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 767px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Alphabetical category */
+        .category {
+            border: 1px solid #ddd;
+            padding: 15px;
+        }
+        .category h2 {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 0;
+        }
+        .category p {
+            margin: 0;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h1>Alphabetical Index</h1>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Links</h3>
+        <a href="#a">A</a>
+        <a href="#b">B</a>
+        <a href="#c">C</a>
+        <a href="#d">D</a>
+        <!-- Add more links as needed -->
+    </div>
+
+    <!-- Body Content -->
+    <div class="content">
+        <!-- Category A -->
+        <div class="category" id="a">
+            <h2>A</h2>
+            <p>Apple</p>
+            <p>Antelope</p>
+            <p>Arrow</p>
+        </div>
+
+        <!-- Category B -->
+        <div class="category" id="b">
+            <h2>B</h2>
+            <p>Banana</p>
+            <p>Bear</p>
+            <p>Bee</p>
+        </div>
+
+        <!-- Category C -->
+        <div class="category" id="c">
+            <h2>C</h2>
+            <p>Cat</p>
+            <p>Cow</p>
+            <p>Carrot</p>
+        </div>
+        <!-- Add more categories as needed -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Made by [Your Name]
+    </footer>
+</body>
+</html>
