@@ -1,146 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alphabetical Indexing</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        /* Header */
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        header img {
-            max-width: 50px;
-            vertical-align: middle;
-        }
-        header h1 {
-            display: inline;
-            margin-left: 20px;
-        }
-        /* Sidebar */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: 100%;
-            background-color: #444;
-            color: white;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
-        .sidebar a:hover {
-            background-color: #555;
-        }
-        /* Content */
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-            display: grid;
-            gap: 20px;
-        }
-        /* Grid layout */
-        @media (min-width: 1024px) {
-            .content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (max-width: 1024px) and (min-width: 768px) {
-            .content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 767px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* Alphabetical category */
-        .category {
-            border: 1px solid #ddd;
-            padding: 15px;
-        }
-        .category h2 {
-            background-color: #f4f4f4;
-            padding: 10px;
-            margin: 0;
-        }
-        .category p {
-            margin: 0;
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            position: relative;
-            clear: both;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphabetical Index</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /* Header styling */
+    header {
+      background-color: #f8f8f8;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header img {
+      width: 100px;
+      height: auto;
+    }
+
+    .menu-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      position: fixed;
+      top: 70px; /* Adjust based on header height */
+      left: -200px; /* Hide sidebar off-screen */
+      width: 200px;
+      height: calc(100% - 70px); /* Full height below the header */
+      background-color: #333;
+      padding: 20px;
+      transition: left 0.3s; /* Smooth transition */
+    }
+
+    .sidebar a {
+      color: white;
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+      padding: 10px;
+    }
+
+    /* Show sidebar when active */
+    .sidebar.active {
+      left: 0; /* Move sidebar into view */
+    }
+
+    /* Body content styling */
+    .content {
+      margin-top: 80px; /* Space for header */
+      padding: 20px;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #f8f8f8;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <img src="logo.png" alt="Logo">
-        <h1>Alphabetical Index</h1>
-    </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h3>Links</h3>
-        <a href="#a">A</a>
-        <a href="#b">B</a>
-        <a href="#c">C</a>
-        <a href="#d">D</a>
-        <!-- Add more links as needed -->
-    </div>
+  <header>
+    <img src="your-logo.png" alt="Logo">
+    <button class="menu-button" onclick="toggleSidebar()">Menu</button>
+  </header>
 
-    <!-- Body Content -->
-    <div class="content">
-        <!-- Category A -->
-        <div class="category" id="a">
-            <h2>A</h2>
-            <p>Apple</p>
-            <p>Antelope</p>
-            <p>Arrow</p>
-        </div>
+  <div class="sidebar" id="sidebar">
+    <a href="#link1">Link 1</a>
+    <a href="#link2">Link 2</a>
+    <a href="#link3">Link 3</a>
+    <a href="#link4">Link 4</a>
+    <a href="#link5">Link 5</a>
+  </div>
 
-        <!-- Category B -->
-        <div class="category" id="b">
-            <h2>B</h2>
-            <p>Banana</p>
-            <p>Bear</p>
-            <p>Bee</p>
-        </div>
+  <div class="content">
+    <h1>Alphabetical Index</h1>
+    <p>Here you can include your indexed content.</p>
+    <ul>
+      <li>A - Apple</li>
+      <li>B - Banana</li>
+      <li>C - Cherry</li>
+      <li>D - Date</li>
+      <li>E - Elderberry</li>
+      <!-- Add more indexed items as needed -->
+    </ul>
+  </div>
 
-        <!-- Category C -->
-        <div class="category" id="c">
-            <h2>C</h2>
-            <p>Cat</p>
-            <p>Cow</p>
-            <p>Carrot</p>
-        </div>
-        <!-- Add more categories as needed -->
-    </div>
+  <footer>
+    Made by Your Name
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        Made by [Your Name]
-    </footer>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
